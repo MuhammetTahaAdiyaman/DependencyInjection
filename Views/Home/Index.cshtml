@@ -1,0 +1,29 @@
+﻿<!--farkı anlamak için birer tane daha injection ihtiyacımız var-->
+@inject Udemy.Dependency.Services.IScopedServices _scopedServices;
+@inject Udemy.Dependency.Services.ISingletonServices _singletonServices;
+@inject Udemy.Dependency.Services.ITransientServices _transientServices;
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>App</title>
+    </head>
+    <body>
+        <p>
+            Singleton = @ViewBag.Singleton
+            <br />
+            Singleton2 = @_singletonServices.GuidId
+        </p>
+
+        <p>
+            Transient = @ViewBag.Transient
+            <br />
+            Transient2 = @_transientServices.GuidId
+        </p>
+
+        <p>
+            Scoped = @ViewBag.Scoped
+            <br />
+            Scoped2 = @_scopedServices.GuidId
+        </p>
+    </body>
+    </html>
